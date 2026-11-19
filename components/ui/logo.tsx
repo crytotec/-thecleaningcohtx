@@ -21,20 +21,22 @@ export function Logo({ tone = "dark", className }: LogoProps) {
   const isLight = tone === "light";
 
   return (
-    <span className={cn("inline-flex min-w-0 items-center -gap-4", className)}>
+    <span className={cn("inline-flex min-w-0 items-center gap-2 sm:gap-3", className)}>
       <span
         role="img"
         aria-label="The Cleaning Company HTX logo"
         style={maskStyle}
         className={cn(
-          "inline-block h-16 shrink-0 aspect-[2/1] lg:h-20",
+          "inline-block aspect-[2/1] h-10 shrink-0 sm:h-12 lg:h-16",
           isLight ? "bg-white" : "bg-brand-700",
         )}
       />
       <span
         className={cn(
-          "font-extrabold leading-none tracking-tight whitespace-nowrap",
-          isLight ? "text-lg text-white" : "text-xl text-brand-800 sm:text-2xl",
+          "min-w-0 truncate font-extrabold leading-none tracking-tight whitespace-nowrap",
+          isLight
+            ? "text-base text-white sm:text-lg"
+            : "text-sm text-brand-800 sm:text-lg lg:text-2xl",
         )}
       >
         thecleaningcohtx
